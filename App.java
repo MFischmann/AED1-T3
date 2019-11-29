@@ -11,6 +11,6 @@ public class App{
         System.out.println(a1.getNota("P2"));
         System.out.println(a1.alunoAprovado());
         System.out.println(a1.getMedia());
-        
+        System.out.println();
     }
 }

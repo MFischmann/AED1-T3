@@ -88,4 +88,19 @@ public class Aluno{
     public boolean alunoAprovado(){
         return getMedia() >= 7;
     }
+
+    @Override
+    public String toString() {
+        String s="";
+        s = "Aluno " +nome+"\n";
+        s = s+"E-Mail: "+email+"\n";
+        s= s+"Notas:\n";
+        for (Map.Entry<String,Double> entry : notas.entrySet()) {
+            String key = entry.getKey();
+            Double value = entry.getValue();
+            s = s+key+": "+value+"\n";
+        }
+        s=s+"Media: "+getMedia();
+        return s;
+    }
 }
