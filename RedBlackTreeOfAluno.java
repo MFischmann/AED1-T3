@@ -43,7 +43,7 @@ public class RedBlackTreeOfAluno{
     }
 
     /**
-     * Retorna o numero de elementos contidos na arvore
+     * Retorna o numero de elementos contidos na arvore O(1)
      * @return count
      */
     public int size(){
@@ -51,7 +51,7 @@ public class RedBlackTreeOfAluno{
     }
 
     /**
-     * Retorna se  a arvore esta vazia
+     * Retorna se  a arvore esta vazia O(1)
      * @return true se nao ha elementos, false se houver pelo menos um
      */
     public boolean isEmpty(){
