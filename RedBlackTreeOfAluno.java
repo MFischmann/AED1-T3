@@ -36,9 +36,12 @@ public class RedBlackTreeOfAluno{
         root = nil;
         root.isBlack = true;
     }
-
+    /**
+     * Busca folha para adicionar elemento. O(log(n))
+     * @param aluno aluno a ser adicionado
+     */
     public void add(Aluno aluno){
-        RBNode z = new RBNode(element);
+        RBNode z = new RBNode(aluno);
         RBNode y = nil;
         RBNode x = root;
         while(x!=nil){
@@ -65,7 +68,10 @@ public class RedBlackTreeOfAluno{
         count++; //finaliza posicionamento novo nodo
         addFixer(z);
     }
-
+    /**
+     * Rebalanceia a arvore apos a adicao de novo nodo O(log(n))
+     * @param z o nodo recentemente adicionado
+     */
     private void addFixer(RBNode z){
         RBNode aunt;
         while(z.father.isRed()){ //enquanto pai do nodo analisado for vermelho
@@ -104,6 +110,7 @@ public class RedBlackTreeOfAluno{
         } 
         root.isBlack = true;
     }
+
     private void leftRotate(RBNode x){
         RBNode y = x.right;
         x.right = y.left;
@@ -124,7 +131,7 @@ public class RedBlackTreeOfAluno{
         x.father = y;
     }
 
-    private void rightRotate(Node x){
+    private void rightRotate(RBNode x){
         RBNode y = x.left;
         x.left = y.right;
         if(y.right!=nil){
@@ -142,7 +149,6 @@ public class RedBlackTreeOfAluno{
         }
         y.right = x;
         x.father = y;
-    }
     }
 
     public Aluno getParent(Aluno aluno){
