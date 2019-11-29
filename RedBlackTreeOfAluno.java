@@ -1,5 +1,6 @@
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 public class RedBlackTreeOfAluno{
     private RBNode root;
@@ -296,7 +297,25 @@ public class RedBlackTreeOfAluno{
             positionsCentralAux(n.right, lst);
         }
     }
+    /**
+     * Retorna lista de elementos atraves de caminhamento por largura O(n)
+     * @return lista com Alunos
+     */
     public ArrayList<Aluno> positionsWidth(){
-        //TODO
+        ArrayList<Aluno> lst = new ArrayList<>();
+        Queue<RBNode> q = new Queue<>();
+        q.enqueue(root);
+        RBNode aux;
+        while(!q.isEmpty()){
+            aux = q.dequeue();
+            lst.add(aux.element);
+            if(aux.left!=nil){
+                q.enqueue(aux.left);
+            }
+            if(aux.right!=nil){
+                q.enqueue(aux.right);
+            }   
+        }
+        return lst;
     }
 }
