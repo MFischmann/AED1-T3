@@ -22,6 +22,12 @@ public class RedBlackTreeOfAluno{
         }
     }
 
+    public RedBlackTreeOfAluno(){
+        count = 0;
+        nill = new RBNode(null);
+        root = nill;
+    }
+
     public void add(Aluno aluno){
 
     }
