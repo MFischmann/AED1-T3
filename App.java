@@ -18,16 +18,44 @@ public class App{
         System.out.println("A".compareTo("B"));
 
         RedBlackTreeOfAluno tree = new RedBlackTreeOfAluno();
-        tree.add(new Aluno("Carlos","carlos@gmail.com"));
-        tree.add(new Aluno("Mariana","mari@gmail.com"));
-        tree.add(new Aluno("Fernanda","fe@gmail.com"));
         tree.add(a1);
-        //tree.add(new Aluno("Henrique","henrique@gmail.com"));
-        //tree.add(new Aluno("Bruno","bruno@gmail.com"));
-        //tree.add(new Aluno("Gabriel","gabigol@gmail.com"));
+        tree.add(new Aluno("Bruno","bruno@gmail.com"));
+        tree.add(new Aluno("Carlos","carlos@gmail.com"));
+        tree.add(new Aluno("Fernanda","fe@gmail.com"));
+        tree.add(new Aluno("Gabriel","gabigol@gmail.com"));
+        tree.add(new Aluno("Henrique","henrique@gmail.com"));
+        tree.add(new Aluno("Mariana","mari@gmail.com"));
+        tree.add(new Aluno("Otavio","ota@gmail.com"));
+        
         ArrayList<Aluno> listaChamada = tree.positionsCentral();
+        System.out.println("Caminhamento central");
         for (Aluno aluno : listaChamada) {
             System.out.println(aluno.getNome());
         }
+
+        listaChamada = tree.positionsPre();
+        System.out.println("\nCaminhamento pre");
+        for (Aluno aluno : listaChamada) {
+            System.out.println(aluno.getNome());
+        }
+
+        listaChamada = tree.positionsPos();
+        System.out.println("\nCaminhamento pos");
+        for (Aluno aluno : listaChamada) {
+            System.out.println(aluno.getNome());
+        }
+
+        listaChamada = tree.positionsWidth();
+        System.out.println("\nCaminhamento largura");
+        for (Aluno aluno : listaChamada) {
+            System.out.println(aluno.getNome());
+        }
+        
+        System.out.println("Num elementos arvore: "+tree.size());
+        System.out.println("Altura arvore: "+tree.height());
+        System.out.println(tree.contains(a1));
+        System.out.println(tree.getParent(a1));
+        System.out.println(tree.getAlunoFromKey("Henrique"));
+        System.out.println(tree.getAlunoFromEmail("fe@gmail.com"));
     }
 }

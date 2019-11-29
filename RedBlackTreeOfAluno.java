@@ -167,7 +167,7 @@ public class RedBlackTreeOfAluno{
             if(aux.element.equals(target)){
                 result = aux;
             }
-            else if(aux.getKey().compareTo(target.getNome())<0){
+            else if(target.getNome().compareTo((aux.getKey()))<0){
                 result = searchNodeRef(aux.left, target);
             }
             else{
@@ -195,7 +195,7 @@ public class RedBlackTreeOfAluno{
      */
     public boolean contains(Aluno aluno){
         RBNode aux = searchNodeRef(root, aluno);
-            return aux != null;
+        return aux != null;
     }
 
     /**
@@ -214,7 +214,7 @@ public class RedBlackTreeOfAluno{
             if(aux.getKey().equals(target)){
                 result = aux;
             }
-            else if(aux.getKey().compareTo(target)<0){
+            else if(target.compareTo(aux.getKey())<0){
                 result = searchNodeKey(aux.left, target);
             }
             else{
