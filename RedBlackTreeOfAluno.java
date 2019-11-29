@@ -166,9 +166,17 @@ public class RedBlackTreeOfAluno{
         }
         return result;
     }
-
+    /**
+     * Busca elemento dentro do nodo pai de um elemento escolhido
+     * @param aluno elemento escolhido
+     * @return Aluno de nodo pai de aluno ou null se elemento aluno nao encontrado ou raiz
+     */
     public Aluno getParent(Aluno aluno){
-        //TODO
+        RBNode aux = searchNodeRef(root, aluno);
+        if(aux!=null && aux.father!=null){
+            return aux.father.element;
+        }
+        return null;
     }
 
     public boolean contains(Aluno aluno){
