@@ -12,5 +12,6 @@ public class App{
         System.out.println(a1.alunoAprovado());
         System.out.println(a1.getMedia());
         System.out.println(a1);
+        System.out.println("A".compareTo("B"));
     }
 }
