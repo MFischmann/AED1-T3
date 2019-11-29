@@ -183,9 +183,16 @@ public class RedBlackTreeOfAluno{
         }
         return null;
     }
-
+    /**
+     * Metodo para ver se Aluno aluno esta dentro da arvore
+     * @param aluno a ser procurado
+     * @return true se estiver contido, false se nao
+     */
     public boolean contains(Aluno aluno){
-        //TODO
+        if(searchNodeRef(root, aluno)!=null){
+            return true;
+        }
+            return false;
     }
 
     public Aluno get(String nome){
