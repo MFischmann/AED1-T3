@@ -243,10 +243,24 @@ public class RedBlackTreeOfAluno{
     public boolean isEmpty(){
         return count == 0;
     }
-
+    /**
+     * Retorna uma arvore clonada baseada na arvore que chemou metodo O(n)
+     * @return clone referencia para a arvore clonada
+     */
     public RedBlackTreeOfAluno clone(){
-        //TODO
+        RedBlackTreeOfAluno clone = new RedBlackTreeOfAluno();
+        cloneAux(root, clone);
+        return clone;
     }
+
+    private void cloneAux(RBNode n, RedBlackTreeOfAluno clone){
+        if(n != nil){
+            clone.add(n.element);
+            cloneAux(n.left, clone);
+            cloneAux(n.right, clone);
+        }
+    }
+
     /**
      * Retorna lista de elementos atraves de caminhamento pre-ordenado O(n)
      * @return lista com Alunos
