@@ -194,8 +194,30 @@ public class RedBlackTreeOfAluno{
             return aux != null;
     }
 
-    public Aluno get(String nome){
-        //TODO
+    /**
+     * Retorna aluno buscando pela chave O(log(n))
+     * @param nome nome (chave) do aluno a ser pesquisado
+     * @return o Aluno que possui nome nome ou null se nao estiver na arvore
+     */
+    public Aluno getAlunoFromKey(String nome){
+        Aluno aux = searchNodeKey(root, nome).element;
+        return aux;
+    }
+
+    private RBNode searchNodeKey(RBNode aux, String target){
+        RBNode result = null;
+        if(aux !=nil){
+            if(aux.getKey().equals(target)){
+                result = aux;
+            }
+            else if(aux.getKey().compareTo(target)<0){
+                result = searchNodeKey(aux.left, target);
+            }
+            else{
+                result = searchNodeKey(aux.right, target);
+            }
+        }
+        return result;
     }
     /**
      * Retorna a altura da arvore. Deve chamar um metodo auxiliar recursivo.
