@@ -103,4 +103,15 @@ public class Aluno{
         s=s+"Media: "+getMedia();
         return s;
     }
+
+    public boolean equals(Aluno outro){
+        if(nome.equals(outro.nome)){
+            if(email.equals(outro.email)){
+                if(notas.equals(outro.notas)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

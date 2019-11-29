@@ -151,6 +151,22 @@ public class RedBlackTreeOfAluno{
         x.father = y;
     }
 
+    private RBNode searchNodeRef(RBNode aux, Aluno target){
+        RBNode result = null;
+        if(aux !=nil){
+            if(aux.element.equals(target)){
+                result = aux;
+            }
+            else if(aux.getKey().compareTo(target.getNome())<0){
+                result = searchNodeRef(aux.left, target);
+            }
+            else{
+                result = searchNodeRef(aux.right, target);
+            }
+        }
+        return result;
+    }
+
     public Aluno getParent(Aluno aluno){
         //TODO
     }
