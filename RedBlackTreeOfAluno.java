@@ -150,7 +150,12 @@ public class RedBlackTreeOfAluno{
         y.right = x;
         x.father = y;
     }
-
+    /**
+     * Metodo privado auxiliar para localizar nodo que contem elemento target O(log(n))
+     * @param aux Nodo a ser pesquisado
+     * @param target elemento a ser localizado
+     * @return o Nodo que contem o elemento ou null se nao localizar
+     */
     private RBNode searchNodeRef(RBNode aux, Aluno target){
         RBNode result = null;
         if(aux !=nil){
@@ -167,7 +172,7 @@ public class RedBlackTreeOfAluno{
         return result;
     }
     /**
-     * Busca elemento dentro do nodo pai de um elemento escolhido
+     * Busca elemento dentro do nodo pai de um elemento escolhido O(log(n))
      * @param aluno elemento escolhido
      * @return Aluno de nodo pai de aluno ou null se elemento aluno nao encontrado ou raiz
      */
