@@ -162,9 +162,36 @@ public class RedBlackTreeOfAluno{
     public Aluno get(String nome){
         //TODO
     }
-
+    /**
+     * Retorna a altura da arvore. Deve chamar um metodo auxiliar recursivo.
+     * @return altura da arvore
+     */
     public int height(){
         //TODO
+        int h;
+        if(root == null){
+            h = -1;
+        }
+        else{
+            h = heightAux(root)-1;
+        }
+        return h;
+    }
+
+    private int heightAux(RBNode aux){
+        int hAuxL = 0;
+        int hAuxR = 0;
+        if(aux.left != nil){
+            hAuxL = heightAux(aux.left);
+        }
+        if(aux.right != nil){
+            hAuxR = heightAux(aux.right);
+        }
+
+        if(hAuxL > hAuxR){
+            return 1 + hAuxL;
+        }
+        return 1 + hAuxR;
     }
 
     /**
