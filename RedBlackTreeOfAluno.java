@@ -42,12 +42,20 @@ public class RedBlackTreeOfAluno{
 
     }
 
+    /**
+     * Retorna o numero de elementos contidos na arvore
+     * @return count
+     */
     public int size(){
-
+        return count;
     }
 
+    /**
+     * Retorna se  a arvore esta vazia
+     * @return true se nao ha elementos, false se houver pelo menos um
+     */
     public boolean isEmpty(){
-
+        return count == 0;
     }
 
     public RedBlackTreeOfAluno clone(){
