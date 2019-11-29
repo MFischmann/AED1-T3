@@ -249,8 +249,8 @@ public class RedBlackTreeOfAluno{
         //TODO
     }
     /**
-     * Retorna lista de elementos atraves de caminhamento preordenado
-     * @return
+     * Retorna lista de elementos atraves de caminhamento pre-ordenado O(n)
+     * @return lista com Alunos
      */
     public ArrayList<Aluno> positionsPre(){
         ArrayList<Aluno> lst = new ArrayList<>();
@@ -265,11 +265,22 @@ public class RedBlackTreeOfAluno{
             positionsPreAux(n.right, lst);
         }
     }
-
+    /**
+     * Retorna lista de elementos atraves de caminhamento pos-ordenado O(n)
+     * @return lista com Alunos
+     */
     public ArrayList<Aluno> positionsPos(){
-        //TODO
+        ArrayList<Aluno> lst = new ArrayList<>();
+        positionsPosAux(root, lst);
+        return lst;
     }
-
+    private void positionsPosAux(RBNode n, ArrayList<Aluno> lst){
+        if(n!=nil){
+            positionsPosAux(n.left, lst);
+            positionsPosAux(n.right, lst);
+            lst.add(n.element);
+        }
+    }
     public ArrayList<Aluno> positionsCentral(){
         //TODO
     }
