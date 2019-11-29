@@ -56,6 +56,20 @@ public class App{
         System.out.println(tree.contains(a1));
         System.out.println(tree.getParent(a1));
         System.out.println(tree.getAlunoFromKey("Henrique"));
+        a1.addNota("P3", 8);
+        System.out.println(tree.getAlunoFromKey("Alvaro"));
         System.out.println(tree.getAlunoFromEmail("fe@gmail.com"));
+        RedBlackTreeOfAluno clone = tree.clone();
+        tree.add(new Aluno("Jose","ze@yahoo.br"));
+        System.out.println("Arvore original:");
+        listaChamada = tree.positionsCentral();
+        for (Aluno aluno : listaChamada) {
+            System.out.println(aluno.getNome());
+        }
+        System.out.println("Arvore clonada:");
+        listaChamada = clone.positionsCentral();
+        for (Aluno aluno : listaChamada) {
+            System.out.println(aluno.getNome());
+        }
     }
 }
