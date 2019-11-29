@@ -189,10 +189,8 @@ public class RedBlackTreeOfAluno{
      * @return true se estiver contido, false se nao
      */
     public boolean contains(Aluno aluno){
-        if(searchNodeRef(root, aluno)!=null){
-            return true;
-        }
-            return false;
+        RBNode aux = searchNodeRef(root, aluno);
+            return aux != null;
     }
 
     public Aluno get(String nome){
