@@ -84,13 +84,15 @@ public class RedBlackTreeOfAluno{
                     z.father.father.isBlack = false;
                     z = z.father.father;
                 }
-                else if(z==z.father.right){//triangulo
-                    z = z.father;
-                    leftRotate(z);
-                }
-                z.father.isBlack = true;
-                z.father.father.isBlack = false;
-                rightRotate(z.father.father);
+                else{
+                    if(z==z.father.right){//triangulo
+                        z = z.father;
+                        leftRotate(z);
+                    }
+                    z.father.isBlack = true;
+                    z.father.father.isBlack = false;
+                    rightRotate(z.father.father);
+                } 
             }
             else{
                 aunt = z.father.father.left;
@@ -100,13 +102,15 @@ public class RedBlackTreeOfAluno{
                     z.father.father.isBlack = false;
                     z = z.father.father;
                 }
-                else if(z==z.father.left){
-                    z = z.father;
-                    rightRotate(z);
-                }
-                z.father.isBlack = true;
-                z.father.father.isBlack = false;
-                leftRotate(z.father.father);
+                else{
+                    if(z==z.father.left){
+                        z = z.father;
+                        rightRotate(z);
+                    }
+                    z.father.isBlack = true;
+                    z.father.father.isBlack = false;
+                    leftRotate(z.father.father);
+                } 
             }
         } 
         root.isBlack = true;
