@@ -203,7 +203,6 @@ public class RedBlackTreeOfAluno{
      * @return altura da arvore
      */
     public int height(){
-        //TODO
         int h;
         if(root == null){
             h = -1;
@@ -249,9 +248,22 @@ public class RedBlackTreeOfAluno{
     public RedBlackTreeOfAluno clone(){
         //TODO
     }
-
+    /**
+     * Retorna lista de elementos atraves de caminhamento preordenado
+     * @return
+     */
     public ArrayList<Aluno> positionsPre(){
-        //TODO
+        ArrayList<Aluno> lst = new ArrayList<>();
+        positionsPreAux(root, lst);
+        return lst;
+    }
+
+    private void positionsPreAux(RBNode n, ArrayList<Aluno> lst){
+        if(n!=nil){
+            lst.add(n.element);
+            positionsPreAux(n.left, lst);
+            positionsPreAux(n.right, lst);
+        }
     }
 
     public ArrayList<Aluno> positionsPos(){
