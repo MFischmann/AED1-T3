@@ -281,10 +281,23 @@ public class RedBlackTreeOfAluno{
             lst.add(n.element);
         }
     }
-    public ArrayList<Aluno> positionsCentral(){
-        //TODO
-    }
 
+    /**
+     * Retorna lista de elementos atraves de caminhamento central O(n)
+     * @return lista com Alunos
+     */
+    public ArrayList<Aluno> positionsCentral(){
+        ArrayList<Aluno> lst = new ArrayList<>();
+        positionsCentralAux(root, lst);
+        return lst;
+    }
+    private void positionsCentralAux(RBNode n, ArrayList<Aluno> lst){
+        if(n!=nil){
+            positionsCentralAux(n.left, lst);
+            lst.add(n.element);
+            positionsCentralAux(n.right, lst);
+        }
+    }
     public ArrayList<Aluno> positionsWidth(){
         //TODO
     }
