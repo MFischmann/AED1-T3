@@ -219,6 +219,32 @@ public class RedBlackTreeOfAluno{
         }
         return result;
     }
+
+       /**
+     * Retorna aluno buscando pelo email O(n)
+     * @param mail email do aluno a ser pesquisado
+     * @return o Aluno que possui email mail ou null se nao estiver na arvore
+     */
+    public Aluno getAlunoFromEmail(String mail){
+        Aluno aux = searchNodeRefEmail(root, mail).element;
+        return aux;
+    }
+
+    private RBNode searchNodeRefEmail(RBNode aux, String target){
+        RBNode result = null;
+        if(aux !=nil){
+            if(aux.element.getEmail().equals(target)){
+                result = aux;
+            }
+            else{
+                result = searchNodeRefEmail(aux.left, target);
+                if(result == null){
+                    result = searchNodeRefEmail(aux.right, target);
+                }
+            }
+        }
+        return result;
+    }
     /**
      * Retorna a altura da arvore. Deve chamar um metodo auxiliar recursivo.
      * @return altura da arvore
